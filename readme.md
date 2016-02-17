@@ -1,5 +1,5 @@
 ## RSS Crawler
-Link: `http://ayusharma.in/rss-crawler`
+Link: `http://ayusharma.in/rss-crawler/app/`
 
 ## Technology Used:
 * ReactJS
