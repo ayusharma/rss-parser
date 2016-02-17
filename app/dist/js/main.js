@@ -70,9 +70,13 @@ var FeedForm = React.createClass({displayName: "FeedForm",
         React.createElement("div", {className: "col-md-8 col-md-offset-2"}, 
           React.createElement("form", {id: "feedForm", ref: "feedForm", onSubmit: this.formSubmit}, 
             React.createElement("div", {className: "col-md-6 col-md-offset-3 form-group"}, 
-              React.createElement("input", {ref: "url", className: "form-control", type: "text", name: "topic", placeholder: "Add A link"}), 
+              React.createElement("input", {ref: "url", className: "form-control", type: "text", name: "topic", placeholder: "Please enter RSS link here.."}), 
               React.createElement("br", null), 
-              React.createElement("button", {type: "Crawl", className: "btn btn-primary btn-block"}, "Add")
+              React.createElement("button", {type: "Crawl", className: "btn btn-success btn-block"}, "Crawl")
+            ), 
+            React.createElement("div", {className: "col-md-8 col-md-offset-2 text-center"}, 
+              React.createElement("br", null), 
+             React.createElement("b", null, "For Example:"), " https://www.technologyreview.com/topnews.rss?from=feedstr"
             )
           )
         )
@@ -90,7 +94,7 @@ var React = require('React');
 var FeedItem = React.createClass({displayName: "FeedItem",
 
   render: function(){
-    console.log(this);
+    //console.log(this);
     return(
       React.createElement("li", {className: "list-group-item"}, 
         React.createElement("div", {className: "media"}, 

@@ -3,7 +3,7 @@ var React = require('React');
 var FeedItem = React.createClass({
 
   render: function(){
-    console.log(this);
+    //console.log(this);
     return(
       <li className="list-group-item">
         <div className="media">
