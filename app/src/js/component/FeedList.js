@@ -5,10 +5,10 @@ var FeedList = React.createClass({
 
   render: function(){
 
-    console.log(this.props.FeedData);
 
     var feedItem = this.props.FeedData.map(function(item){
-          <FeedItem image={item.mediaGroups} heading={item.title} desc={item.content} />
+      //    console.log(item);
+          return <FeedItem image={item.mediaGroups} heading={item.title} desc={item.content} />
     });
 
     return(

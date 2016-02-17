@@ -21,8 +21,8 @@ var Feed = React.createClass({displayName: "Feed",
         dataType: "jsonp",
         success: function(response) {
             var apiData = response.responseData.feed.entries;
-            console.log(response.responseData);
-            var newData = this.state.FeedData.concat([apiData])
+          //  console.log(response.responseData.feed.entries);
+            var newData = this.state.FeedData.concat(apiData);
             this.setState({
               FeedData:newData
             });
@@ -31,7 +31,9 @@ var Feed = React.createClass({displayName: "Feed",
   },
 
   render: function(){
+    console.log(this.state.FeedData);
     return(
+
       React.createElement("div", null, 
         React.createElement(FeedForm, {apiCall: this.apiCall}), 
         React.createElement(FeedList, {FeedData: this.state.FeedData})
@@ -81,16 +83,17 @@ var React = require('React');
 var FeedItem = React.createClass({displayName: "FeedItem",
 
   render: function(){
+    console.log(this);
     return(
       React.createElement("li", {className: "list-group-item"}, 
         React.createElement("div", {className: "media"}, 
           React.createElement("div", {className: "media-left media-middle"}, 
             React.createElement("a", {href: "#"}, 
-              React.createElement("img", {className: "media-object", src: "http://pthumbnails.5min.com/10382039/519101935_c_210_158.jpg", alt: ""})
+              React.createElement("img", {className: "media-object", src: this.props.image[0].contents[0].thumbnails[0].url, alt: ""})
             )
           ), 
           React.createElement("div", {className: "media-body"}, 
-            React.createElement("h4", {className: "media-heading"}, this.props.title), 
+            React.createElement("h4", {className: "media-heading"}, this.props.heading), 
             this.props.desc
           )
         )
@@ -110,10 +113,10 @@ var FeedList = React.createClass({displayName: "FeedList",
 
   render: function(){
 
-    console.log(this.props.FeedData);
 
     var feedItem = this.props.FeedData.map(function(item){
-          React.createElement(FeedItem, {image: item.mediaGroups, heading: item.title, desc: item.content})
+      //    console.log(item);
+          return React.createElement(FeedItem, {image: item.mediaGroups, heading: item.title, desc: item.content})
     });
 
     return(

@@ -3,16 +3,17 @@ var React = require('React');
 var FeedItem = React.createClass({
 
   render: function(){
+    console.log(this);
     return(
       <li className="list-group-item">
         <div className="media">
           <div className="media-left media-middle">
             <a href="#">
-              <img className="media-object" src="http://pthumbnails.5min.com/10382039/519101935_c_210_158.jpg" alt="" />
+              <img className="media-object" src={this.props.image[0].contents[0].thumbnails[0].url} alt="" />
             </a>
           </div>
           <div className="media-body">
-            <h4 className="media-heading">{this.props.title}</h4>
+            <h4 className="media-heading">{this.props.heading}</h4>
             {this.props.desc}
           </div>
         </div>

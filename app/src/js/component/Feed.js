@@ -20,8 +20,8 @@ var Feed = React.createClass({
         dataType: "jsonp",
         success: function(response) {
             var apiData = response.responseData.feed.entries;
-            console.log(response.responseData);
-            var newData = this.state.FeedData.concat([apiData])
+          //  console.log(response.responseData.feed.entries);
+            var newData = this.state.FeedData.concat(apiData);
             this.setState({
               FeedData:newData
             });
@@ -30,7 +30,9 @@ var Feed = React.createClass({
   },
 
   render: function(){
+    console.log(this.state.FeedData);
     return(
+
       <div>
         <FeedForm apiCall={this.apiCall} />
         <FeedList FeedData={this.state.FeedData} />
