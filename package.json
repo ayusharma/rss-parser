@@ -1,0 +1,48 @@
+{
+  "name": "rss-crawler",
+  "version": "1.0.0",
+  "description": "A simple RSS Crawler in ReactJS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayusharma/rss-crawler.git"
+  },
+  "keywords": [
+    "rss",
+    "rss-crawler",
+    "react"
+  ],
+  "author": "Ayush Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayusharma/rss-crawler/issues"
+  },
+  "homepage": "https://github.com/ayusharma/rss-crawler#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^2.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "reactify": "^1.1.1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ],
+    "insertGlobals": true,
+    "debug": true
+  }
+}
