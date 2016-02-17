@@ -8,7 +8,13 @@ var FeedList = React.createClass({
 
     var feedItem = this.props.FeedData.map(function(item){
       //    console.log(item);
-          return <FeedItem image={item.mediaGroups} heading={item.title} desc={item.content} />
+          var imageStatus;
+          if (item.mediaGroups){
+            imageStatus = item.mediaGroups[0].contents[0].thumbnails[0].url
+          } else {
+            imageStatus = "";
+          }
+          return <FeedItem image={imageStatus} heading={item.title} desc={item.content} />
     });
 
     return(

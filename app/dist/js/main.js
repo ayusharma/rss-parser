@@ -20,12 +20,18 @@ var Feed = React.createClass({displayName: "Feed",
         jsonp: "callback",
         dataType: "jsonp",
         success: function(response) {
-            var apiData = response.responseData.feed.entries;
-          //  console.log(response.responseData.feed.entries);
-            var newData = this.state.FeedData.concat(apiData);
-            this.setState({
-              FeedData:newData
-            });
+
+            if(response.responseData == null) {
+
+              alert("Please add a valid RSS Url");
+
+            } else {
+              var apiData = response.responseData.feed.entries;
+              var newData = this.state.FeedData.concat(apiData);
+              this.setState({
+                FeedData:newData
+              });
+            }
         }.bind(this)
     });
   },
@@ -36,6 +42,7 @@ var Feed = React.createClass({displayName: "Feed",
 
       React.createElement("div", null, 
         React.createElement(FeedForm, {apiCall: this.apiCall}), 
+        React.createElement("br", null), 
         React.createElement(FeedList, {FeedData: this.state.FeedData})
       )
     )
@@ -89,7 +96,7 @@ var FeedItem = React.createClass({displayName: "FeedItem",
         React.createElement("div", {className: "media"}, 
           React.createElement("div", {className: "media-left media-middle"}, 
             React.createElement("a", {href: "#"}, 
-              React.createElement("img", {className: "media-object", src: this.props.image[0].contents[0].thumbnails[0].url, alt: ""})
+              React.createElement("img", {className: "media-object", src: this.props.image, alt: ""})
             )
           ), 
           React.createElement("div", {className: "media-body"}, 
@@ -116,7 +123,13 @@ var FeedList = React.createClass({displayName: "FeedList",
 
     var feedItem = this.props.FeedData.map(function(item){
       //    console.log(item);
-          return React.createElement(FeedItem, {image: item.mediaGroups, heading: item.title, desc: item.content})
+          var imageStatus;
+          if (item.mediaGroups){
+            imageStatus = item.mediaGroups[0].contents[0].thumbnails[0].url
+          } else {
+            imageStatus = "";
+          }
+          return React.createElement(FeedItem, {image: imageStatus, heading: item.title, desc: item.content})
     });
 
     return(

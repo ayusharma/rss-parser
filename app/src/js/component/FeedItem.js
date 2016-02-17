@@ -9,7 +9,7 @@ var FeedItem = React.createClass({
         <div className="media">
           <div className="media-left media-middle">
             <a href="#">
-              <img className="media-object" src={this.props.image[0].contents[0].thumbnails[0].url} alt="" />
+              <img className="media-object" src={this.props.image} alt="" />
             </a>
           </div>
           <div className="media-body">

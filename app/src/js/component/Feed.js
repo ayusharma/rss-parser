@@ -19,12 +19,18 @@ var Feed = React.createClass({
         jsonp: "callback",
         dataType: "jsonp",
         success: function(response) {
-            var apiData = response.responseData.feed.entries;
-          //  console.log(response.responseData.feed.entries);
-            var newData = this.state.FeedData.concat(apiData);
-            this.setState({
-              FeedData:newData
-            });
+
+            if(response.responseData == null) {
+
+              alert("Please add a valid RSS Url");
+
+            } else {
+              var apiData = response.responseData.feed.entries;
+              var newData = this.state.FeedData.concat(apiData);
+              this.setState({
+                FeedData:newData
+              });
+            }
         }.bind(this)
     });
   },
@@ -35,6 +41,7 @@ var Feed = React.createClass({
 
       <div>
         <FeedForm apiCall={this.apiCall} />
+        <br/>
         <FeedList FeedData={this.state.FeedData} />
       </div>
     )
