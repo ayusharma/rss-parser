@@ -1,5 +1,5 @@
 ## RSS Crawler
-Link: `http://ayusharma.in/rss-crawler/app/`
+[Link](https://frozen-ridge-64850.herokuapp.com/)
 
 ## Technology Used:
 * ReactJS
