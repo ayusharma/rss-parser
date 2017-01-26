@@ -1,4 +1,4 @@
-var React =     require('React'),
+var React =     require('react'),
     ReactDOM =  require("react-dom"),
     Feed =      require('./component/Feed');
 

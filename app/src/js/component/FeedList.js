@@ -1,4 +1,4 @@
-var React = require('React'),
+var React = require('react'),
     FeedItem = require('./FeedItem')
 
 var FeedList = React.createClass({

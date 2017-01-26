@@ -1,4 +1,4 @@
-var React =     require('React'),
+var React =     require('react'),
     FeedForm =  require('./FeedForm'),
     $ =         require('jquery'),
     FeedList =  require('./FeedList');
@@ -22,7 +22,7 @@ var Feed = React.createClass({
 
             if(response.responseData == null) {
 
-              alert("Please add a valid RSS Url");
+              alert(response.responseDetails);
 
             } else {
               var apiData = response.responseData.feed.entries;
