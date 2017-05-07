@@ -13,19 +13,18 @@ var Feed = React.createClass({
   },
 
   apiCall : function(url){
-
+    var feed = 'https://morning-earth-19323.herokuapp.com/?feedURL=';
     $.ajax({
-        url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q='+url,
-        jsonp: "callback",
-        dataType: "jsonp",
+        url: [feed, url.trim()].join(''),
+        method: "GET",
         success: function(response) {
 
-            if(response.responseData == null) {
+            if(response.items == null) {
 
-              alert(response.responseDetails);
+              alert("An error occurred.");
 
             } else {
-              var apiData = response.responseData.feed.entries;
+              var apiData = response.items;
               var newData = this.state.FeedData.concat(apiData);
               this.setState({
                 FeedData:newData
