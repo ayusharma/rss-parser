@@ -10,15 +10,15 @@ var webserver = require('gulp-webserver');
 
 
 gulp.task('browserify', function() {
-    return gulp.src('app/src/js/main.js')
+    return gulp.src('src/js/main.js')
         .pipe(browserify())
-        .pipe(gulp.dest('./app/dist/js'));
+        .pipe(gulp.dest('./dist/js'));
 });
 
 
 
 gulp.task('webserver', function() {
-  gulp.src('app')
+  gulp.src('./')
     .pipe(webserver({
       host: '0.0.0.0',
       livereload: true,
@@ -30,23 +30,23 @@ gulp.task('webserver', function() {
 
 //live reload js
 gulp.task('js',function(){
-	gulp.src('./app/dist/**/*.js')
+	gulp.src('./dist/**/*.js')
 	.pipe(connect.reload());
 });
 
 
 //live reload html
 gulp.task('html',function(){
-	gulp.src('./app/*.html')
+	gulp.src('./*.html')
 	.pipe(connect.reload());
 });
 
 
 //live reload html
 gulp.task('watch',function(){
-	gulp.watch('app/dist/js/*.js',['js']);
-	gulp.watch('app/index.html',['html'])
-	gulp.watch('app/src/js/**/*.js',['browserify'])
+	gulp.watch('dist/js/*.js',['js']);
+	gulp.watch('index.html',['html'])
+	gulp.watch('src/js/**/*.js',['browserify'])
 });
 
 
