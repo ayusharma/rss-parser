@@ -1,5 +1,5 @@
-## RSS Crawler
-[Link](https://frozen-ridge-64850.herokuapp.com/)
+## RSS parser
+[Link](http://ayusharma.github.io/rss-parser)
 
 ## Technology Used:
 * ReactJS
@@ -7,7 +7,7 @@
 ## How to build
 
 ##### Clone repo  
-`$ git clone https://github.com/ayusharma/rss-crawler.git`
+`$ git clone https://github.com/ayusharma/rss-parser.git`
 
 ##### Install dependencies
 `$ npm i`

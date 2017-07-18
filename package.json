@@ -1,26 +1,26 @@
 {
-  "name": "rss-crawler",
+  "name": "rss-parser",
   "version": "1.0.0",
-  "description": "A simple RSS Crawler in ReactJS",
+  "description": "A simple RSS parser in ReactJS",
   "main": "gulpfile.js",
   "scripts": {
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayusharma/rss-crawler.git"
+    "url": "git+https://github.com/ayusharma/rss-parser.git"
   },
   "keywords": [
     "rss",
-    "rss-crawler",
+    "rss-parser",
     "react"
   ],
   "author": "Ayush Sharma",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ayusharma/rss-crawler/issues"
+    "url": "https://github.com/ayusharma/rss-parser/issues"
   },
-  "homepage": "https://github.com/ayusharma/rss-crawler#readme",
+  "homepage": "https://github.com/ayusharma/rss-parser#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",

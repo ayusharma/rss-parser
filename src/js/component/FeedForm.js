@@ -17,7 +17,7 @@ var FeedForm = React.createClass({
             <div className="col-md-6 col-md-offset-3 form-group">
               <input ref="url" className="form-control" type="text" name="topic" placeholder="Please enter RSS link here.." />
               <br/>
-              <button type="Crawl" className="btn btn-success btn-block">Crawl</button>
+              <button type="Crawl" className="btn btn-success btn-block">Parse</button>
             </div>
             <div className="col-md-8 col-md-offset-2 text-center">
               <br/>
