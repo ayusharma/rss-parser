@@ -26,6 +26,3 @@ ayush.aceit@gmail.com
 
 ### IRC:
 ayushpix
-
-### Website:
-http://ayusharma.in
